@@ -11,7 +11,8 @@ T min(T v) {
 template<typename T, typename... Args>
 T min(T first, Args... args) {
     //std::cout << __PRETTY_FUNCTION__ << "\n";
-    return first <= min(args...)?first:min(args...);
+    auto r = min(args...);
+    return first < r ? first : r;
 }
 
 int main(){
